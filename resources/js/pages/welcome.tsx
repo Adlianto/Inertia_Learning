@@ -1,4 +1,5 @@
 import { Head, Link, useForm } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 import React, { useState } from 'react';
 
 interface Post {
