@@ -1,4 +1,4 @@
-import { Head, useForm, router } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import React, { useState } from 'react';
 
 interface Post {
@@ -35,6 +35,26 @@ export default function Welcome({ posts }: { posts: Post[] }) {
     return (
         <div className="p-6 max-w-md mx-auto">
             <Head title="Welcome" />
+
+            <div className="flex justify-between items-center mb-6">
+                <span className="text-gray-700 font-medium">Dashboard Posts</span>
+                <div className="flex items-center gap-3">
+                    <Link
+                        href="/profile"
+                        className="px-3 py-1.5 bg-gray-200 text-white rounded-md text-sm font-medium"
+                    >
+                        Profile
+                    </Link>
+                    <Link
+                        href="/logout"
+                        method="post"
+                        as="button"
+                        className="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium transition"
+                    >
+                        Log Out
+                    </Link>
+                </div>
+            </div>
 
             {/* Form Create */}
             <form onSubmit={handleCreate} className="mb-6">
